@@ -21,10 +21,10 @@ This framework is to validate timer functionality.
 
 ## Requirements
 
-In order to utilise this project you need to have the following installed locally:
+In order to utilise this project you need to have the following installed/configured :
 
 * Maven 3
-* Chrome - Chromedriver, Firefox - geckodriver (UI tests use Chrome by default, can be changed in common.properties -- src/test/properties/common.properties)
+* Browser can be changed in common.properties -- src/test/properties/common.properties
 * Java 1.8
 
 ## Usage
