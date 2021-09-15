@@ -45,7 +45,9 @@ public class BasePage {
     }
 
     public static void tearDown(){
-            driver.quit();
+        if(null!=driver){
+            driver.close();
+        }
     }
 
 }

@@ -5,6 +5,7 @@ import com.maersk.eggtimer.pages.TimerPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class EggTimerStepDef {
 
@@ -33,5 +34,11 @@ public class EggTimerStepDef {
     public void i_navigate_to_url(String string) {
         TimerPage timerPage= new TimerPage();
         timerPage.navigateToUrl(string);
+    }
+
+    @Then("I validate text presence")
+    public void i_validate_text_presence() {
+        TimerDetails timerDetails = new TimerDetails();
+        Assert.assertTrue(timerDetails.textPresence());
     }
 }

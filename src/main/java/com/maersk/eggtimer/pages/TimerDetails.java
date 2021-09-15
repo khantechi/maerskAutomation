@@ -12,6 +12,9 @@ public class TimerDetails extends BasePage {
     @FindBy(xpath="//p[@class='ClassicTimer-time']/span")
     WebElement timerValue;
 
+    @FindBy(xpath="//div[text()='Please enter a valid time. Try \"15 minutes\" or \"9:00pm\"']")
+    WebElement invalidText;
+
     public TimerDetails() {
         PageFactory.initElements(driver,this);
     }
@@ -66,5 +69,9 @@ public class TimerDetails extends BasePage {
                 break;
             }
         }
+    }
+
+    public Boolean textPresence(){
+        return invalidText.isDisplayed();
     }
 }

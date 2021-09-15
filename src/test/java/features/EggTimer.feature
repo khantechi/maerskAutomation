@@ -7,4 +7,8 @@ Feature: EggTimer scenarios
     Then I validate countdown timer
 
 
-
+  Scenario: To validate EggTimer countdown with invalid input
+    Given I navigate to url "https://e.ggtimer.com/"
+    When I enter time with "asdfString"
+    When I click on Start button
+    Then I validate text presence

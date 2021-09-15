@@ -2,6 +2,7 @@ package com.maersk.eggtimer.pages;
 
 import com.maersk.eggtimer.utilities.TimerHandler;
 import com.maersk.eggtimer.utilities.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,13 +24,19 @@ public class TimerPage extends BasePage{
     public void enterTimeInTextField(String time){
         inputTimeField.sendKeys(time);
         TimerHandler timerHandler= new TimerHandler();
-        timerHandler.setTime(Integer.parseInt(time));
+        try{
+        timerHandler.setTime(Integer.parseInt(time));}
+        catch (Exception e){
+            System.out.println("user input is not number");
+        }
     }
 
     public TimerPage clickStartBtn()  {
         startBtn.click();
         return new TimerPage();
     }
+
+
 
 
 }
